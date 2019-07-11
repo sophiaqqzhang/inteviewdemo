@@ -85,9 +85,9 @@ public class PrestashopService {
 		
 		char c = randomCharGenerator();
 		//input first name
-		driver.findElement(By.name("firstname")).sendKeys("xiaoyun" + c);
+		driver.findElement(By.name("firstname")).sendKeys("xiaohua" + c);
 		//input last name
-		driver.findElement(By.name("lastname")).sendKeys("Zhu" + c);
+		driver.findElement(By.name("lastname")).sendKeys("Wang" + c);
 		//input email address
 		driver.findElement(By.name("email")).sendKeys("581" + c + "@qq.com");
 		//input password
