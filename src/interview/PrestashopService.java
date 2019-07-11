@@ -91,48 +91,4 @@ public class PrestashopService {
 		driver.findElement(By.xpath("//footer[@class='form-footer clearfix']/button[@type='submit']")).click();
 	}
     
-//    @Test(dataProvider="registerdata",dataProviderClass=TestDataProvider.class)
-//    public void signup(WebDriver driver) throws InterruptedException {
-//		//sign-in
-//	driver.findElement(By.xpath("//a[@title='Log in to your customer account']")).click();
-//	//sign-up
-//	driver.findElement(By.cssSelector("div.no-account>a")).click();
-//	//fill the required info
-//	//radio button
-//	WebElement MRS=driver.findElement(By.xpath("//span[@class='custom-radio']/input[@value=2]"));
-//	WebElement MR=driver.findElement(By.xpath("//span[@class='custom-radio']/input[@value=1]"));
-////	driver.findElement(By.xpath("//span[@class='custom-radio']/input[@value=1]")).click();
-////	
-//
-//
-//	WebElement firstName=driver.findElement(By.name("firstname"));
-//	
-//	WebElement lastName=driver.findElement(By.name("lastname"));
-//
-//	WebElement eMail=driver.findElement(By.name("email"));
-//
-//	WebElement passWord=driver.findElement(By.name("password"));
-//
-//	WebElement birthDay=driver.findElement(By.name("birthday"));
-//	
-//	
-//	
-//	}
-//    
-//    
-//    @Test(dataProvider="registerdata",dataProviderClass=TestDataProvider.class)
-//    public void register(WebElement title,String firstname,String lastname,String email,String password,String birthday){
-//    	WebElement MRS=driver.findElement(By.xpath("//span[@class='custom-radio']/input[@value=2]"));
-// 	    WebElement MR=driver.findElement(By.xpath("//span[@class='custom-radio']/input[@value=1]"));
-//    	title.click();
-//    	firstName.sendKeys(firstname);
-//    	lastName.sendKeys(lastname);
-//    	eMail.sendKeys(email);
-//    	passWord.sendKeys(password);
-//    	birthDay.sendKeys(birthday);
-//    //save		
-//    	driver.findElement(By.xpath("//footer[@class='form-footer clearfix']/button[@type='submit']")).click();		
-//    }
-    
-    
 }
