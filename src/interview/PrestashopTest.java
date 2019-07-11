@@ -1,5 +1,7 @@
 package interview;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;  
@@ -13,18 +15,16 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class PrestashopTest {
 
 	public static void main(String[] args)throws Exception{	
-	//IE WebDriver driver = new InternetExplorerDriver();
 	//Firefox
 	System.setProperty("webdriver.gecko.driver", "driver\\geckodriver.exe");
 	WebDriver driver = new FirefoxDriver();
+	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	
 	//navigate to the target page		
 	driver.get(" http://fo.demo.prestashop.com/en/");
-	Thread.sleep(20000);
-	
 	PrestashopService testService = new PrestashopService();
-
 	driver.manage().window().maximize();	
+	
 	//1. Register a new user and login
 	testService.signup(driver);
     
@@ -41,6 +41,7 @@ public class PrestashopTest {
     //4. Validate total price is correct on shopping cart page
     testService.validateTheTotalPrice(driver, goods1Price, goods2Price);
     
+    //logout&quit   
     driver.findElement(By.xpath("//div[@class='user-info']/a[@class='logout hidden-sm-down']")).click();//logout
     driver.quit();  
    }

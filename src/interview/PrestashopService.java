@@ -28,33 +28,24 @@ public class PrestashopService {
 
 	public float addGoods2ToCart(WebDriver driver) throws InterruptedException {
 		driver.findElement(By.xpath("//a[@class='thumbnail product-thumbnail']/img[@alt='Pack Mug + Framed poster']")).click();
-		Thread.sleep(2000);
 		WebElement goods2 = driver.findElement(By.xpath("//div[@class='current-price']/span"));//get the price
 		float goods2Price = getPriceFromElement(goods2);
 
 		driver.findElement(By.xpath("//div[@class='add']/button[@data-button-action='add-to-cart']")).click();//add to cart
 		Thread.sleep(5000);
-		
 		driver.findElement(By.cssSelector("p:last-of-type +div.cart-content-btn>a")).click();//check out
-		Thread.sleep(3000);
 		return goods2Price;
 	}
 
 	public float addFristGoodsToCart(WebDriver driver) throws InterruptedException {
 		driver.findElement(By.xpath("//a[@class='thumbnail product-thumbnail']/img[@alt='Mug Today is a good day']")).click();
-		Thread.sleep(2000);
 		WebElement goods1=driver.findElement(By.xpath("//div[@class='current-price']/span"));//get the price
 		float goods1Price = getPriceFromElement(goods1);
 		
 		driver.findElement(By.xpath("//div[@class='add']/button[@data-button-action='add-to-cart']")).click();//add to cart
-		
 		Thread.sleep(5000);
-
 		driver.findElement(By.cssSelector("p:last-of-type +div.cart-content-btn>button")).click();//continue shopping
-		Thread.sleep(3000);
 		driver.navigate().back();
-		driver.navigate().back();
-		Thread.sleep(2000);
 		return goods1Price;
 	}
 
@@ -69,19 +60,18 @@ public class PrestashopService {
 		driver.findElement(By.cssSelector("input.ui-autocomplete-input")).sendKeys("Mug");
 		
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
-		Thread.sleep(2000);
 	}
 
 	public void signup(WebDriver driver) throws InterruptedException {
 		//sign-in
 		driver.findElement(By.xpath("//a[@title='Log in to your customer account']")).click();
-		Thread.sleep(3000);
 		//sign-up
 		driver.findElement(By.cssSelector("div.no-account>a")).click();
-		
 		//fill the required info
 		//radio button
-		driver.findElement(By.xpath("//span[@class='custom-radio']/input[@value=2]")).click();
+//		WebElement MRS=driver.findElement(By.xpath("//span[@class='custom-radio']/input[@value=2]"));
+//		WebElement MR=driver.findElement(By.xpath("//span[@class='custom-radio']/input[@value=1]"));
+		driver.findElement(By.xpath("//span[@class='custom-radio']/input[@value=1]")).click();
 		
 		char c = randomCharGenerator();
 		//input first name
@@ -89,7 +79,7 @@ public class PrestashopService {
 		//input last name
 		driver.findElement(By.name("lastname")).sendKeys("Wang" + c);
 		//input email address
-		driver.findElement(By.name("email")).sendKeys("581" + c + "@qq.com");
+		driver.findElement(By.name("email")).sendKeys("512581" + c + "@qq.com");
 		//input password
 		driver.findElement(By.name("password")).sendKeys("10010#110@42");
 		//input birthday
